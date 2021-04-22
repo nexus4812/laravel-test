@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\BlogViewController::class, "index"]);
+Route::get('/', [\App\Http\Controllers\BlogViewController::class, "index"])->name('blog.list');
+Route::get('blog/detail/{id}', [\App\Http\Controllers\BlogViewController::class, "detail"])->where('id', '[0-9]+')->name('blog.detail');

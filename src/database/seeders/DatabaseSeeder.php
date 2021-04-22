@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         User::factory(15)->create()->each(function (User $user) {
-            Blog::factory(random_int(1, 3))
+            Blog::concreteFactory(random_int(1, 3))
+                ->seeding()
                 ->has(Comment::factory()->count(random_int(1,2)))
                 ->create([Blog::USER_ID => $user]);
         });
