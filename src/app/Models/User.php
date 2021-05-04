@@ -26,6 +26,15 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $table = self::TABLE;
+
+    const TABLE = 'users';
+
+    const ID = 'id';
+    const NAME = 'name';
+    const EMAIL = 'email';
+    const PASSWORD = 'password';
+
     /**
      * The attributes that are mass assignable.
      *

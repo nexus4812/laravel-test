@@ -15,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\BlogViewController::class, "index"])->name('blog.list');
 Route::get('blog/detail/{id}', [\App\Http\Controllers\BlogViewController::class, "detail"])->where('id', '[0-9]+')->name('blog.detail');
+Route::get('singup', [\App\Http\Controllers\SingUpController::class, 'index'])->name('singup.get');
+Route::post('singup', [\App\Http\Controllers\SingUpController::class, 'store'])->name('singup.post');
+Route::get('mypage/blogs', [\App\Http\Controllers\BlogViewController::class, 'index'])->name('mypage.blogs');
+Route::get('logout', [\App\Http\Controllers\UserLoginConroller::class, 'logout'])->name('logout');
+Route::get('login', [\App\Http\Controllers\UserLoginConroller::class, 'index'])->name('login.get');
+Route::post('login', [\App\Http\Controllers\UserLoginConroller::class, 'login'])->name('login.post');
